@@ -1,0 +1,109 @@
+global u8 monitor_icons
+
+function u64 Monitor.getIconSpriteKey(u8 type)
+{
+	if (type == 0)
+		return "monitor_icon_static"
+	else if (type == 0x01)
+    {
+        if (monitor_icons == 1)
+        {
+	        return isMainCharacter(CHARACTER_SONIC) ? "monitor_icon_1up" : isMainCharacter(CHARACTER_TAILS) ? "monitor_icon_1up" : "monitor_icon_1up"
+        }
+	    else
+        {
+		    return isMainCharacter(CHARACTER_SONIC) ? "monitor_icon_sonic" : isMainCharacter(CHARACTER_TAILS) ? "monitor_icon_tails" : "monitor_icon_knuckles"
+        }
+    }
+	else if (type == 0x02)
+		return "monitor_icon_robotnik"
+	else if (type == 0x03)
+	{
+		if (monitor_icons == 1)
+		{
+			return "monitor_icon_ring_alt"
+		}
+		else
+		{
+			return "monitor_icon_ring"
+		}
+	}
+	else if (type == 0x04)
+	{
+		if (monitor_icons == 1)
+		{
+			return "monitor_icon_speedshoes_alt"
+		}
+		else
+		{
+			return "monitor_icon_speedshoes"
+		}
+	}
+	else if (type == 0x05)
+	{
+		if (monitor_icons == 1)
+		{
+			return "monitor_icon_fireshield_alt"
+		}
+		else
+		{
+		    return "monitor_icon_fireshield"
+		}
+	}
+	else if (type == 0x06)
+	{
+		if (monitor_icons == 1)
+		{
+			return "monitor_icon_lightningshield_alt"
+		}
+		else
+		{
+		    return "monitor_icon_lightningshield"
+		}
+	}
+	else if (type == 0x07)
+	{
+		if (monitor_icons == 1)
+		{
+			return "monitor_icon_bubbleshield_alt"
+		}
+		else
+		{
+		    return "monitor_icon_bubbleshield"
+		}
+	}
+	else if (type == 0x08)
+	{
+		if (monitor_icons == 1)
+		{
+			return "monitor_icon_invincibility_alt"
+		}
+		else
+		{
+		    return "monitor_icon_invincibility"
+		}
+	}
+	else if (type == 0x09)
+	{
+		if (monitor_icons == 1)
+		{
+			return "monitor_icon_super_alt"
+		}
+		else
+		{
+		    return "monitor_icon_super"
+		}
+	}
+	else if (type == 0x0b)
+	{
+		if (monitor_icons == 1)
+		{
+			return "monitor_icon_classicshield_alt"
+		}
+		else
+		{
+		    return "monitor_icon_classicshield"
+		}
+	}
+	return 0
+}

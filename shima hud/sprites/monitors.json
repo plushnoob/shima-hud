@@ -1,0 +1,13 @@
+{
+// sorry but if i want accurate colors i have to make it a png
+	"monitor_icon_ring_alt":  { "File": "monitors_alt.png", "Rect": "64,0,16,16", "Center": "8,8" },
+	"monitor_icon_speedshoes_alt":  { "File": "monitors_alt.png", "Rect": "80,0,16,16", "Center": "8,8" },
+	"monitor_icon_invincibility_alt":  { "File": "monitors_alt.png", "Rect": "96,0,16,16", "Center": "8,8" },
+	"monitor_icon_super_alt":  { "File": "monitors_alt.png", "Rect": "112,0,16,16", "Center": "8,8" },
+	"monitor_icon_lightningshield_alt":  { "File": "monitors_alt.png", "Rect": "64,16,16,16", "Center": "8,8" },
+	"monitor_icon_fireshield_alt":  { "File": "monitors_alt.png", "Rect": "80,16,16,16", "Center": "8,8" },
+	"monitor_icon_bubbleshield_alt":  { "File": "monitors_alt.png", "Rect": "96,16,16,16", "Center": "8,8" },
+	"monitor_icon_classicshield_alt":  { "File": "monitors_alt.png", "Rect": "112,16,16,16", "Center": "8,8" },
+	"monitor_icon_static_alt":  { "File": "monitors_alt.png", "Rect": "64,48,16,16", "Center": "8,8" },
+	"monitor_icon_1up":  { "File": "monitors_alt.png", "Rect": "64,32,16,16", "Center": "8,8" }
+}
