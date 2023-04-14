@@ -1,0 +1,65 @@
+global u8 shimahud_icons
+function string getCharacterLivesIcon(u8 character)
+{
+    u64 characterName = 0
+    if !(u8[0xffffE654])
+    {
+        if (shimahud_icons == 1)
+        {
+        if (character == CHARACTER_SONIC)
+            characterName = "S3_sonic"
+        else if (character == CHARACTER_TAILS)
+            characterName = "S3_tails"
+        else
+            characterName = "S3_knuckles"
+        }
+        else
+        {
+            if (character == CHARACTER_SONIC)
+            characterName = "sonic"
+        else if (character == CHARACTER_TAILS)
+            characterName = "tails"
+        else
+            characterName = "knuckles"
+        }
+    }
+    else
+    {
+        if (u8[0xffffE654] == 1) // Mighty 
+        {
+            if (System.getGlobalVariableValueByName("Mighty_Sprite_type"))
+            {
+            if (u8[0xffffE654] == 1)
+            characterName = (System.getGlobalVariableValueByName("MightyPalette") == 8 ) ? "S3_undertale" : (System.getGlobalVariableValueByName("MightyPalette") == 7 ) ? "S3_lambert_cherry" : (System.getGlobalVariableValueByName("MightyPalette") == 6 ) ? "S3_wild_berry" : (System.getGlobalVariableValueByName("MightyPalette") == 5 ) ? "S3_blood_orange" : (System.getGlobalVariableValueByName("MightyPalette") == 4 ) ? "S3_Knuxred" : (System.getGlobalVariableValueByName("MightyPalette") == 3 ) ? "S3_mania" : (System.getGlobalVariableValueByName("MightyPalette") == 2 ) ? "S3_chaotix" : (System.getGlobalVariableValueByName("MightyPalette") == 1) ? "S3_segasonic" : "S3_ultimate"
+            }
+            else //mania
+            {
+             characterName = (System.getGlobalVariableValueByName("MightyPalette") == 8 ) ? "undertale" : (System.getGlobalVariableValueByName("MightyPalette") == 7 ) ? "lambert_cherry" : (System.getGlobalVariableValueByName("MightyPalette") == 6 ) ? "wild_berry" : (System.getGlobalVariableValueByName("MightyPalette") == 5 ) ? "blood_orange" : (System.getGlobalVariableValueByName("MightyPalette") == 4 ) ? "Knuxred" : (System.getGlobalVariableValueByName("MightyPalette") == 3 ) ? "mania" : (System.getGlobalVariableValueByName("MightyPalette") == 2 ) ? "chaotix" : (System.getGlobalVariableValueByName("MightyPalette") == 1) ? "segasonic" : "ultimate"
+            }
+        }
+        if (u8[0xffffE654] == 2) // Ray
+        {
+            if (System.getGlobalVariableValueByName("Ray_Sprite_type"))
+            {
+            if (u8[0xffffE654] == 2)
+            characterName = (System.getGlobalVariableValueByName("Ray_Pal") == 9 ) ? "R_U" : (System.getGlobalVariableValueByName("Ray_Pal") == 8 ) ? "R_HW" : (System.getGlobalVariableValueByName("Ray_Pal") == 7 ) ? "R_banana" : (System.getGlobalVariableValueByName("Ray_Pal") == 6 ) ? "R_guava" : (System.getGlobalVariableValueByName("Ray_Pal") == 5 ) ? "R_apricot" : (System.getGlobalVariableValueByName("MightyPalette") == 4 ) ? "R_GD" : (System.getGlobalVariableValueByName("Ray_Pal") == 3 ) ? "R_acorn" : (System.getGlobalVariableValueByName("Ray_Pal") == 2 ) ? "R_Mania" : (System.getGlobalVariableValueByName("Ray_Pal") == 1) ? "R_ss" : "R_s3"
+            }
+            else //mania
+            {
+             characterName = (System.getGlobalVariableValueByName("Ray_Pal") == 9 ) ? "U" : (System.getGlobalVariableValueByName("Ray_Pal") == 8 ) ? "HW" : (System.getGlobalVariableValueByName("Ray_Pal") == 7 ) ? "banana" : (System.getGlobalVariableValueByName("Ray_Pal") == 6 ) ? "guava" : (System.getGlobalVariableValueByName("Ray_Pal") == 5 ) ? "apricot" : (System.getGlobalVariableValueByName("MightyPalette") == 4 ) ? "GD" : (System.getGlobalVariableValueByName("Ray_Pal") == 3 ) ? "acorn" : (System.getGlobalVariableValueByName("Ray_Pal") == 2 ) ? "Mania" : (System.getGlobalVariableValueByName("Ray_Pal") == 1) ? "ss" : "s3"
+            }
+        }
+        // else if (u8[0xffffE654] == 3) // Amy
+        //     characterName = "Amy"
+        if (u8[0xffffE654] == 5) // Shadow for some reason the shadowpalette function not even if i set it as a option
+            characterName = (System.getGlobalVariableValueByName("shadowpalette")) ? "slot5" : "slot5Mephiles"
+        //else if (u8[0xffffE654] == 19) // here lies the sniper himself fang :mouse_sad:
+        //  characterName = "slot19"
+        else if (u8[0xffffE654] == 30) // midtal  sonic
+          characterName = "slot30"
+        else if (u8[0xffffE654] == 91)
+            characterName = "slot91"
+    }
+    return stringformat("hud_lives_icon_%s", characterName)
+    // return base.getCharacterLivesIcon(character)
+}
